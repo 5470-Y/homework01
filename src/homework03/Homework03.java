@@ -71,20 +71,15 @@ public class Homework03 {
 
         boolean isLeap = true;
         int monthNumber = 2;
-        if (!isLeap) {
-            switch (monthNumber) {
-                case 1, 3, 5, 7, 8, 10, 12 -> System.out.println("В месяце " + monthNumber + " — 31 день");
-                case 4, 6, 9, 11 -> System.out.println("В месяце " + monthNumber + " — 30 дней");
-                case 2 -> System.out.println("В месяце " + monthNumber + " — 28 дней");
+        switch (monthNumber) {
+            case 1, 3, 5, 7, 8, 10, 12 -> System.out.println("В месяце " + monthNumber + " — 31 день");
+            case 4, 6, 9, 11 -> System.out.println("В месяце " + monthNumber + " — 30 дней");
+            case 2 -> {
+                if (!isLeap) System.out.println("В месяце " + monthNumber + " — 28 дней");
+                else System.out.println("В месяце " + monthNumber + " — 29 дней");
             }
         }
-        else {
-            switch (monthNumber) {
-                case 1, 3, 5, 7, 8, 10, 12 -> System.out.println("В месяце " + monthNumber + " — 31 день");
-                case 4, 6, 9, 11 -> System.out.println("В месяце " + monthNumber + " — 30 дней");
-                case 2 -> System.out.println("В месяце " + monthNumber + " — 29 дней");
-                }
-            }
+
 
         /*Задача #5 на switch
         Даны переменные couponNumber - номер купона и resultSum - сумма покупки.
