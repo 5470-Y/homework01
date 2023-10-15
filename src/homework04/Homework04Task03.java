@@ -25,11 +25,10 @@ public class Homework04Task03 {
             guess = scanner.nextInt();
             if (guess == 0) {
                 System.out.println("Программа завершена.");
-                break;}
-            else if (guess < hiddenNumber) {
+                break;
+            } else if (guess < hiddenNumber) {
                 System.out.println("Загаданное число больше");
-            }
-            else if (guess > hiddenNumber) {
+            } else if (guess > hiddenNumber) {
                 System.out.println("Загаданное число меньше");
             } else {System.out.println("Вы угадали!");}
         } while (!(guess == hiddenNumber));

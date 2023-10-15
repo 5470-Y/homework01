@@ -3,6 +3,7 @@ package homework04;
 import java.util.Scanner;
 
 public class Homework04Task04 {
+
     public static void main(String[] args) {
 
         /*### Задача на использование любого цикла (выберите сами)
@@ -18,24 +19,25 @@ public class Homework04Task04 {
         int min = 1;
         int max = 100;
         byte answer;
-        byte minMax;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Загадайте число в диапазоне [" + min + ";" + max +"]. Я попробую его угадать." );
         do {
-            System.out.println("Ваше число " + ((min + max) / 2) + "?");
+            int mid = (min + max) / 2;
+            if (mid < 1) mid = 50; // Не знала как сделать корректно проверку, поэтому вернула значение
+            if (mid > 100) mid = 50; // к исходному.  >100 не будет, а <1 может быть с таким рассчётом.
+            System.out.println("Ваше число " + mid + "?");
             System.out.println("Если это Ваше число, нажмите 1. Если нет, нажмите 0.");
             answer = scanner.nextByte();
-            if (answer == 1) {   // Без этого if и break цикл не завершался. Хотя, мне кажется, можно написать
-                break;           // проще, но пока неясно как.
-            } else {
-                System.out.println("Ваше число больше?");
-                System.out.println("Если Ваше число больше, нажмите 1. Если меньше, нажмите 0.");
-                minMax = scanner.nextByte();
-                if (minMax == 1) {
-                    min =  ((min + max) / 2);
-                } else {max = ((min + max) / 2);}
-            }
-        } while (answer == 0);
+            if (answer != 1 && answer != 0) continue;
+            if (answer == 1) break;
+            System.out.println("Ваше число больше?");
+            System.out.println("Если Ваше число больше, нажмите 1. Если меньше, нажмите 0.");
+            answer = scanner.nextByte();
+            if (answer != 1 && answer != 0) continue;
+            if (answer == 1) {
+                    min = mid + 1;
+                } else {max = mid - 1;}
+            } while (true);
         System.out.println("Число угадано!");
 
     }
