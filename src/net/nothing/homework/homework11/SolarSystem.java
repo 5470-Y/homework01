@@ -1,4 +1,4 @@
-package net.nothing.homework.Homework11;
+package net.nothing.homework.homework11;
 
 public enum SolarSystem {
     MERCURY ("Меркурий", 3.33022 * Math.pow(10, 23),2439.7),

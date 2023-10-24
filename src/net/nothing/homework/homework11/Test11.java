@@ -1,4 +1,4 @@
-package net.nothing.homework.Homework11;
+package net.nothing.homework.homework11;
 
 public class Test11 {
     public static void main(String[] args) {
