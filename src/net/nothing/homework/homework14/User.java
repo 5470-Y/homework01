@@ -13,6 +13,8 @@ public class User<T> {
         this.userName = userName;
     }
 
+    public User() {}
+
     public T getId() {
         return id;
     }

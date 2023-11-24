@@ -5,6 +5,7 @@ public class PairContainer<T, K> extends User {
     public K value;
 
     public PairContainer(T key, K value) {
+        super();
         this.key = key;
         this.value = value;
     }
